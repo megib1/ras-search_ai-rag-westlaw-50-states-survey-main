@@ -1,0 +1,104 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "deployment.name" . }}
+  labels:
+    version: {{ .Chart.AppVersion }}
+{{ include "mychart.common_labels" .  | indent 4 }}
+  annotations:
+    app.tr.com/deployment-specification: "https://github.com/tr/ras-search_ai-rag-westlaw-50-states-survey/blob/main/helm2/application/templates/deployment.yaml"
+{{ include "mychart.resource_annotations" . | indent 4 }}
+spec:
+  replicas: {{ include "replicaCount.initial" . }}
+  selector:
+    matchLabels:
+      version: {{ .Chart.AppVersion }}
+{{ include "mychart.common_labels" .  | indent 6 }}
+  template:
+    metadata:
+      annotations:
+        proxy.istio.io/config: |
+          terminationDrainDuration: {{ .Values.deployment.terminationDrainDuration }}
+        app.tr.com/deployment-specification: "https://github.com/tr/ras-search_ai-rag-westlaw-50-states-survey/blob/main/helm2/application/templates/deployment.yaml"
+{{ include "mychart.resource_annotations" . | indent 8 }}
+      labels:
+        version: {{ .Chart.AppVersion }}
+{{ include "mychart.common_labels" .  | indent 8 }}
+    spec:
+      securityContext:
+        runAsNonRoot: true
+      serviceAccountName: {{ .Chart.Name }}-svc-account-{{ .Values.environment }}
+      terminationGracePeriodSeconds: {{ .Values.deployment.terminationGracePeriodSeconds }}
+      containers:
+        - image: {{ .Values.image_url }}
+          imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
+          name: {{ .Chart.Name }}-{{ .Values.environment }}
+          ports:
+            - containerPort: {{ .Values.deployment.image.containerPort }}
+          lifecycle:
+            preStop:
+              exec:
+                command: [ "sh", "-c", "sleep 30" ]
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            privileged: false
+            readOnlyRootFilesystem: true
+          # Added volume mounts for temporary directory
+          volumeMounts:
+          - name: tmp-volume
+            mountPath: /home/nonroot/tmp
+          env:
+            - name: REGION_LONG
+              value: {{ .Values.region_long }}
+            - name: REGION_SHORT
+              value: {{ .Values.region_short }}
+            - name: CLUSTER_SHORT
+              value: {{ .Values.cluster_short }}
+            - name: ENVIRONMENT
+              value: {{ .Values.environment }}
+            - name: C_FORCE_ROOT
+              value: "false"
+            - name: RESOURCES_DIR
+              value: "./app/config/resources"
+            - name: DD_SERVICE
+              value: {{ .Chart.Name }}
+            - name: DD_TRACE_GIT_METADATA_ENABLED
+              value: 'False'
+            - name: DD_CELERY_DISTRIBUTED_TRACING
+              value: 'True'
+            - name: DD_ENV
+              value: {{ .Values.environment }}
+            - name: DD_VERSION
+              value: {{ .Chart.AppVersion }}
+            - name: DD_PROFILING_ENABLED
+              value: {{ include "datadog.profiler.enabled" . }}
+            - name: DD_AGENT_HOST
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+
+            # Added environment variable for temporary directory
+            - name: TMPDIR
+              value: "/home/nonroot/tmp"
+          resources:
+            limits:
+              cpu: {{ .Values.deployment.image.resources.limits.cpu }}
+              memory: {{ .Values.deployment.image.resources.limits.memory }}
+            requests:
+              cpu: {{ .Values.deployment.image.resources.requests.cpu }}
+              memory: {{ .Values.deployment.image.resources.requests.memory }}
+      # Added volumes definition for temporary directory
+      volumes:
+        - name: tmp-volume
+          emptyDir: {}
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              version: {{ .Chart.AppVersion }}
+{{ include "mychart.common_labels" .  | indent 14 }}

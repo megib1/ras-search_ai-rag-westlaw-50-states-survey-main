@@ -1,0 +1,23 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: {{ .Chart.Name }}-authorization-policy-{{ .Values.environment }}
+  labels:
+{{ include "mychart.common_labels" .  | indent 4 }}
+  annotations:
+    app.tr.com/deployment-specification: "https://github.com/tr/ras-search_ai-rag-westlaw-50-states-survey/blob/main/helm2/infrastructure/templates/authorization-policy.yaml"
+{{ include "mychart.resource_annotations" . | indent 4 }}
+spec:
+  action: ALLOW
+  rules:
+    - from:
+        - source:
+            principals:
+              - "cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+              - "cluster.local/ns/private-ingressgateway/sa/private-ingressgateway-service-account"
+              - cluster.local/ns/{{ .Release.Namespace }}/sa/{{ .Values.application.name }}-svc-account-{{ .Values.environment }}
+              - "cluster.local/ns/207891-ras-search-ai-ci/sa/{{ .Values.application.name }}-svc-account-dev"
+      to:
+        - operation:
+            paths:
+              - "/*"

@@ -1,0 +1,29 @@
+name-template: 'v$RESOLVED_VERSION-release'
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: 'Breaking Changes'
+    labels:
+      - 'major-change'
+  - title: 'New Features'
+    labels:
+      - 'enhancement'
+  - title: 'Bug Fixes and Other Changes'
+change-template: '- $TITLE (#$NUMBER)'
+change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+filter-by-commitish: true
+version-resolver:
+  major:
+    labels:
+      - 'major-change'
+  minor:
+    labels:
+      - 'enhancement'
+  patch:
+    labels:
+      - 'bug'
+  default: patch
+template: |
+
+  # v$RESOLVED_VERSION Changes
+
+  $CHANGES

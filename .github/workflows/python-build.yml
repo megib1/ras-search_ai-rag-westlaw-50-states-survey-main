@@ -1,0 +1,373 @@
+name: TrOrg-Python-CiBuild
+
+on:
+  push:
+    branches:
+      - '**'
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+    tags-ignore:
+      - '**'
+  #Run workflow manually for building and releasing on non-main branches such as development or hotfix branches.
+  workflow_dispatch:
+    inputs:
+      buildType:
+        description: Type of build/release
+        required: true
+        type: choice
+        options:
+        - dev
+        - hotfix
+
+env:
+  # Define git user email and name to be used for git commits
+  GIT_USER_EMAIL: "actions@github.com"
+  GIT_USER_NAME: "GitHub Actions"
+  ENV_CONFIG_FILE: ".github/env-variables.txt"
+
+jobs:
+  # CI Build Job
+  build:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions: write-all
+    outputs:
+      ENVIRONMENT_VARIABLE_PATH: ${{ env.ENV_CONFIG_FILE }}
+      UNIT_TEST_RESULTS_XML: ${{ steps.unit_test.outputs.UNIT_TEST_RESULTS_XML }}
+      COVERAGE_PERCENTAGE: ${{ steps.code_coverage.outputs.COVERAGE_PERCENTAGE }}
+      BRANCH_RELEASE_TAG: ${{ steps.get_version.outputs.BRANCH_RELEASE_TAG }}
+      BUILD_JOB_STATUS: ${{ steps.set_job_status.outputs.BUILD_JOB_STATUS}}
+
+    steps:
+      # Drafts your next Release notes as Pull Requests are merged into "main"
+
+      - name: Create draft release
+        id: draft-release
+        if: github.ref == 'refs/heads/main'
+        uses: release-drafter/release-drafter@3f0f87098bd6b5c5b9a36d49c41d998ea58f9348 # v6.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout Code
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        with:
+            fetch-depth: 0
+            ref: ${{ github.ref_name }}
+
+      - name: "Get version"
+        shell: sh
+        if: ${{ steps.draft-release.outputs.tag_name != null }}
+        run: |
+          tag=${{ steps.draft-release.outputs.tag_name }}
+          echo TAG=$tag >> $GITHUB_ENV
+          echo VERSION=${tag#v} >> $GITHUB_ENV
+          # create VERSION file with version (will be used by the deploy process)
+          echo ${tag#v} > VERSION
+
+      # Create dev/hotfix tags that comply with pep440 scheme whcih is required by poetry for python.
+      # https://python-poetry.org/docs/main/libraries/#versioning
+      # Pep440 allows using git hash in tag suffix like '1.2.3+dev.gitsha' but docker does not support '+' format in tags.
+      - name: "Get version"
+        id: get_version
+        if: (github.event.inputs != '')
+        shell: sh
+        run: |
+          # I ran into a scenario where multiple tags were on the same commit (which is legal in GitHub)
+          # When I wanted to cut a new dev build I was getting the same "latest" tag over and over again 
+          # So I had to add some additional logic to get the true latest tag since the git describe command would grab dev1 always when dev2 existed on the same commit
+          # I had to play around locally with git commands to figure out how to get the true latest tag if multiple tags existed on the same commit
+          # I found that if you described the tags to get the supposed latest tag and then used the rev-list command to get the commit hash of that tag
+          # You could then use the tag sort command to get all tags on that commit and sort them in descending order and grab the head of that list 
+          # Which then is the actual true latest tag and this should allow you to build over and over again and always make a new dev build that is pep440 compliant
+          # But then also allow us to use suffixes for our release names to allow for cumulus to pick up the latest build
+          
+          describe_tags_output=$(git describe --tags --abbrev=0)
+          echo "DESCRIBE_TAGS_OUTPUT=$describe_tags_output" >> $GITHUB_ENV
+          rev_list_output=$(git rev-list $describe_tags_output | head -n 1)
+          echo "REV_LIST_OUTPUT=$rev_list_output" >> $GITHUB_ENV
+          tag_sort_output=$(git tag --sort=-refname --contains $rev_list_output | head -n 1)
+          echo "TAG_SORT_OUTPUT=$tag_sort_output" >> $GITHUB_ENV
+          
+          # this is how they were grabbing the latest tag but eventually I found it didnt work for us 100% of the time
+          # I am leaving this here so I can reference this later on when builds are happening to see if I find myself in this scenario again
+          old_latest_tag_before_hyphen=$(git describe --tags --abbrev=0 | cut -d "-" -f 1) # ex. v1.2.3 and sometimes v1.2.3-devX
+          echo "OLD_LATEST_TAG_BEFORE_HYPHEN=$old_latest_tag_before_hyphen" >> $GITHUB_ENV
+          
+          latest_tag_before_hyphen=$(echo "$tag_sort_output" | cut -d "-" -f 1) # ex. v1.2.3 and sometimes v1.2.3-devX
+          echo "LATEST_TAG_BEFORE_HYPHEN=$latest_tag_before_hyphen" >> $GITHUB_ENV # add some logging to see what values I am getting when running this on github
+          major_minor_patch=$(echo "$latest_tag_before_hyphen" | cut -d "." -f 1-3) # ex. v1.2.3
+          echo "MAJOR_MINOR_PATCH=$major_minor_patch" >> $GITHUB_ENV # add some logging to see what values I am getting when running this on github
+          dev_version=$(echo "$latest_tag_before_hyphen" | cut -d "." -f 4-) # ex. devX
+          echo "DEV_VERSION=$dev_version" >> $GITHUB_ENV # add some logging to see what values I am getting when running this on github
+          
+          build_type=${{ github.event.inputs.buildType }} # will be dev, hotfix or labs usually
+          
+          # need to check if dev_version is empty and if so then create dev0 for the current major minor patch version
+          if [ -z "$dev_version" ]
+          then
+            # this is the first dev version for current major minor patch version
+            pep440_tag="$major_minor_patch.dev0" # ex. v1.2.3.dev0
+            cumulus_tag="$pep440_tag-$build_type" # ex. v1.2.3-dev0-dev (cumulus pipelines listen to a specific suffix of github release)
+          else
+            # this is not the first dev version for current major minor patch version
+            latest_dev_version=${dev_version#dev} # remove the dev prefix and obtain just the number
+            new_dev_version=$((latest_dev_version + 1)) # increment the dev version
+            pep440_tag="$major_minor_patch.dev$new_dev_version" # set pep440 tag
+            cumulus_tag="$pep440_tag-$build_type" # set cumulus tag
+          fi
+          
+          echo "PEP440_TAG=$pep440_tag" >> $GITHUB_ENV # set pep440 tag as a variable in the environment of current build execution
+          echo "CUMULUS_TAG=$cumulus_tag" >> $GITHUB_ENV # set cumulus tag as a variable in the environment of current build execution
+          echo "VERSION=${pep440_tag#v}" >> $GITHUB_ENV # this is what the VERSION file will contain and what will be used for poetry
+          echo "TAG=$cumulus_tag" >> $GITHUB_ENV # this is used when uploading the artifact to the release and creating the draft release
+          echo "BRANCH_RELEASE_TAG=$cumulus_tag" >> $GITHUB_OUTPUT # this is used when modifying the release tag in the publish job
+          echo ${pep440_tag#v} > VERSION # create VERSION file with version (will be used by the deploy process)
+
+
+      - name: Set environment variables defined in the ENV_CONFIG_FILE
+        shell: bash
+        run: |
+          IFS="["
+          while read -r -a LINE || [ -n "$LINE" ] ; do
+            if [[ -n "$LINE" && ${LINE::1} != "#" ]]; then
+              echo "$LINE" | xargs;
+            fi
+          done < ${{ env.ENV_CONFIG_FILE }} >> $GITHUB_ENV
+
+      # Set up Python environment to latest LTS version per Tech TOC
+      # guidance (support and security reasons)
+      - name: Setup Python
+        uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3 # v5.2.0
+        with:
+          python-version: 3.11
+          architecture: x64
+
+      - name: Get python version
+        shell: sh
+        id: get-python-version
+        run: |
+          echo "version=$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info[:3]))")" >> $GITHUB_OUTPUT
+
+#       - name: Load cached Poetry installation
+#         id: cache-poetry
+#         uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+#         with:
+#           path: ~/.local
+#           key: ${{ runner.os }}-poetry-${{ steps.get-python-version.outputs.version }}
+
+
+#      - name: Load cached Poetry installation
+#        id: cache-poetry-dependencies
+#        uses: actions/cache@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4.2.0
+#        with:
+#          path: |
+#              ~/.cache/pypoetry
+#              .venv
+#          key: poetry-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+
+      # Install Poetry for dependency/package management 
+      - name: Install Poetry
+        uses: snok/install-poetry@76e04a911780d5b312d89783f7b1cd627778900a # v1.4.1
+
+      - name: Configure TR-Artifactory repo for Poetry
+        shell: sh
+        run: |
+          poetry self add poetry-plugin-export
+          poetry config repositories.tr https://tr1.jfrog.io/tr1/api/pypi/pypi-local
+          poetry config http-basic.tr ${{ env.ARTIFACTORY_USER }} ${{ secrets[env.ARTIFACTORY_TOKEN_SECRET_NAME] }}
+
+      - name: Replace version
+        shell: sh
+        if: (github.ref == 'refs/heads/main') || (github.event.inputs != '')
+        run: sed -i "s/^version.*/version = \"$VERSION\"/" pyproject.toml
+
+      - name: Install dependencies
+        shell: sh
+        if: steps.cache-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry sync
+
+#      - name: Linting
+#        shell: sh
+#        run: poetry run flake8 ./
+
+      # Run unit tests
+      - name: Unit Test
+        shell: sh
+        id: unit_test
+        env:
+          UNIT_TEST_RESULTS_XML: reports/pytest_junit.xml
+        run: |
+          poetry run poe pytest
+          echo UNIT_TEST_RESULTS_XML=$UNIT_TEST_RESULTS_XML >> $GITHUB_ENV
+          echo "UNIT_TEST_RESULTS_XML=${UNIT_TEST_RESULTS_XML}" >> $GITHUB_OUTPUT
+      # Upload unit test results path for developer review and badge rendering
+      - name: Upload Unit Test Results Artifact for Badges
+        uses: actions/upload-artifact@834a144ee995460fba8ed112a2fc961b36a5ec5a # v4.3.6
+        with:
+          name: unit-test-results
+          path: ${{ env.UNIT_TEST_RESULTS_XML }}
+
+      # Find code coverage report path for developer review and badge rendering
+      - name: Get Code Coverage File Path
+        shell: sh
+        id: artifact_path
+        run: |
+          echo CODE_COV_RESULTS_ARTIFACT=$(find ./reports -iname "*coverage.xml*") >> $GITHUB_ENV
+      # Code Coverage Percentage
+      - name: Get Code Coverage
+        id: code_coverage
+        shell: pwsh
+        run: |
+          Set-Variable -Name "CODE_COV_RESULTS_ARTIFACT" -Value ${{ env.CODE_COV_RESULTS_ARTIFACT }}
+          [xml]$xmlElm = Get-Content -Path $CODE_COV_RESULTS_ARTIFACT
+          $outputCoverage = [decimal]$xmlElm.coverage.'line-rate'
+          $outputCoverage = “{0:N2}” -f (($outputCoverage)*100)
+          Write-Output ${outputCoverage}
+          echo "COVERAGE_PERCENTAGE=$outputCoverage" >> $env:GITHUB_OUTPUT
+      - name: Publish Code Coverage Report
+        uses: 5monkeys/cobertura-action@ee5787cc56634acddedc51f21c7947985531e6eb # v14
+        with:
+          path: ${{ env.CODE_COV_RESULTS_ARTIFACT }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          minimum_coverage: ${{ env.CODE_COV_THRESHOLD }}
+          fail_below_threshold: true  # Set True to enable Quality Gate
+          show_missing: true
+
+      - name: Create Unit Test Result Report
+        id: unit_test_report
+        uses: dorny/test-reporter@31a54ee7ebcacc03a09ea97a7e5465a47b84aea5 # v1.9.1
+        if: success() || failure()
+        with:
+          name: Unit Test Results
+          path: ${{ env.UNIT_TEST_RESULTS_XML }}
+          reporter: java-junit
+          only-summary: 'false'
+          fail-on-error: 'true'   #Set True to enable Quality Gate
+
+      - name: Package
+        shell: sh
+        run: poetry build
+
+      - name: Get path to Python artifact
+        shell: sh
+        run: echo PYTHON_ARTIFACT=$(find dist/*.tar.gz -type f) >> $GITHUB_ENV
+
+      # Run devops_lead-time-action
+      - name: Run devops_lead-time-action
+        uses: tr/devops_lead-time-action@c525d4b6b00ccadb16c99a44293825b608820755 # v1.0.10
+        id: lead-time
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+
+      - name: fetch repo topics
+        shell: sh
+        run: |
+          gh_resp=$(gh api -H "Accept: application/vnd.github+json" /repos/${{ github.repository }}/topics)
+          echo REPO_TOPICS=$(echo "$gh_resp" | jq '.names') >> $GITHUB_ENV
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Synthesize cloudformation template if cdk app
+        shell: sh
+        run: |
+          # if cdk template exists synthesize cloudformation templatess
+          if [ -e cdk.json ]
+          then
+            npm install -g aws-cdk
+            mkdir -p dist/${VERSION}
+            poetry run cdk synth --output dist/${VERSION}
+          fi
+
+      - name: Set up jfrog client
+        if: ${{ env.CDK_TEMPLATE_VERSION }}
+        uses: jfrog/setup-jfrog-cli@26532cdb5b1ea07940f10d57666fd988048fc903 # v4.2.2
+
+       # Get Cdk templates from Artifactory
+      - name: Get cdk template
+        shell: sh
+        if: ${{ env.CDK_TEMPLATE_VERSION }}
+        run: jf rt dl ${{ env.ARTIFACTORY_REPONAME }}/${{ env.ARTIFACTORY_FOLDERNAME }}/${{ env.CDK_TEMPLATE_VERSION }}/ --url=https://tr1.jfrog.io/artifactory --user=${{ env.ARTIFACTORY_USER }} --password=${{ secrets[env.ARTIFACTORY_TOKEN_SECRET_NAME] }}
+
+      - name: Check repo properties
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Get all repo properties and iterate through them
+          echo $(gh api /repos/$GITHUB_REPOSITORY/properties/values) | jq -c '.[]' | while read i; do
+            # If the property name is "fedramp-scoped" then echo the key and value into GitHub Actions environment variables
+            if [[ $(echo $i | jq -r '.property_name') == "fedramp-scoped" ]]; then
+              echo "Setting FEDRAMP_SCOPED environment variable"
+              echo FEDRAMP_SCOPED=$(echo $i | jq -r '.value') >> $GITHUB_ENV
+            fi
+          done
+
+      - name: Create zip of build artifacts
+        shell: sh
+        run: |
+          echo '{"service_name":"${{ env.SERVICE_NAME }}", "fedramp-scoped":"${{ env.FEDRAMP_SCOPED }}", "github_repository":"${{ github.repository }}", "github_sha": "${{ steps.lead-time.outputs.commit }}", "repo_topics":${{ env.REPO_TOPICS }}, "full_semver": "${{ steps.lead-time.outputs.name }}", "created_at": "${{ steps.lead-time.outputs.time }}", "lead_time_to_release_days": "${{ steps.lead-time.outputs.lead_time }}"}' > release-info.json
+          poetry export -f requirements.txt --output ./requirements.txt --without-hashes
+          sed -i '/--index-url/d' ./requirements.txt
+          sed -i '/Windows/d' ./requirements.txt
+          zip -r artifact.zip * -x@${{ env.ARTIFACT_EXCLUSION_FILE }}
+
+      # Required for Attestation Generation Job below
+      - name: Upload Artifact
+        if: (github.ref == 'refs/heads/main') || (github.event.inputs != '')
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 #v4.6.2
+        with:
+          name: artifact.zip
+          path: "${{ github.workspace }}/artifact.zip"
+
+      - name: Upload Release Asset
+        shell: sh
+        if: github.ref == 'refs/heads/main'
+        id: upload-release-asset
+        run: |
+          gh release upload --clobber $TAG artifact.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Dev/Hotfix draft release
+        if: (github.event.inputs != '')
+        uses: ncipollo/release-action@2c591bcc8ecdcd2db72b97d6147f871fcd833ba5 # v1.14.0
+        with:
+          allowUpdates: true
+          tag: ${{ env.TAG }}
+          artifacts: artifact.zip
+          draft: true
+          commit: ${{ github.sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Output job status
+        id: set_job_status
+        if: always()
+        run: |
+          echo "BUILD_JOB_STATUS=${{ job.status }}" >> $GITHUB_OUTPUT
+
+  # Calling  workflow "TrOrg-Attestation-Generation" for FedRAMP compliance
+  generate_build_attestation:
+    if: (github.ref == 'refs/heads/main') || (github.event.inputs != '')
+    needs: [ build ]
+    uses: tr/reuseable-github-actions_attestation-generation/.github/workflows/attestation_generation.yml@0528f71469232b814108fe52f3418f8b8d10a0f8 #v1.0.1
+    with:
+      artifact_name: "artifact.zip"
+
+
+  publish:
+    runs-on: ubuntu-latest
+    if: (github.event.inputs != '')
+    needs: [build]
+    steps:
+      # Check out repo at latest commit
+      - name: Checkout Git Repo
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+
+      - name: Publish Dev/Hotfix Release
+        shell: sh
+        run: gh release edit ${{ needs.build.outputs.BRANCH_RELEASE_TAG }} --draft=false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

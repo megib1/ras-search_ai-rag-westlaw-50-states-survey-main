@@ -1,0 +1,23 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ .Chart.Name }}-hpa-{{ .Values.environment }}-{{ .Chart.AppVersion }}
+  labels:
+{{ include "mychart.common_labels" .  | indent 4 }}
+  annotations:
+    app.tr.com/deployment-specification: "https://github.com/tr/ras-search_ai-rag-westlaw-50-states-survey/blob/main/helm2/application/templates/hpa.yaml"
+{{ include "mychart.resource_annotations" . | indent 4 }}
+spec:
+  minReplicas: {{ include "replicaCount.initial" . }}
+  maxReplicas: {{ include "replicaCount.max" . }}
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "deployment.name" . }}
+  metrics:
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.hpa.memory.targetAverageUtilization }}

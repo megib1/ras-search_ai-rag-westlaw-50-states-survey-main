@@ -1,0 +1,15 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ .Chart.Name }}-pdb-{{ .Values.environment }}-{{ .Chart.AppVersion }}
+  labels:
+{{ include "mychart.common_labels" .  | indent 4 }}
+  annotations:
+    app.tr.com/deployment-specification: "https://github.com/tr/ras-search_ai-rag-westlaw-50-states-survey/blob/main/helm2/application/templates/pdb.yaml"
+{{ include "mychart.resource_annotations" . | indent 4 }}
+spec:
+  maxUnavailable: {{ .Values.poddb.maxUnavailable }}
+  selector:
+    matchLabels:
+      version: {{ .Chart.AppVersion }}
+{{ include "mychart.common_labels" .  | indent 6 }}

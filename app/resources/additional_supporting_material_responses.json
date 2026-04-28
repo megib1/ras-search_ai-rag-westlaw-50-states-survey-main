@@ -1,0 +1,486 @@
+{
+  "westlaw_chat_profile4-mock": {
+    "admin_decision": [
+      {
+        "content_type": "ADMINDECISION",
+        "global_rank": 1,
+        "source_guid": "I4cf4acfc5ee111ee8921fbef1a541940"
+      },
+      {
+        "content_type": "ADMINDECISION",
+        "global_rank": 2,
+        "source_guid": "Ibb4768c8194911ee8921fbef1a541940"
+      },
+      {
+        "content_type": "ADMINDECISION",
+        "global_rank": 3,
+        "source_guid": "Ibb4768c6194911ee8921fbef1a541940"
+      }
+    ],
+    "practical_law": [
+      {
+        "content_type": "KNOWHOW",
+        "global_rank": 1,
+        "source_guid": "Idcde28f3028111e38578f7ccc38dcbee"
+      },
+      {
+        "content_type": "KNOWHOW",
+        "global_rank": 2,
+        "source_guid": "Ib9a9f3d41c9a11e38578f7ccc38dcbee"
+      },
+      {
+        "content_type": "KNOWHOW",
+        "global_rank": 3,
+        "source_guid": "If0d479d417ce11ebbea4f0dc9fb69570"
+      }
+    ],
+    "secondary_sources": [
+      {
+        "content_type": "ANALYTICAL",
+        "global_rank": 1,
+        "source_guid": "I2e962832728a11eeaa63a87056c6f1f9"
+      },
+      {
+        "content_type": "ANALYTICAL",
+        "global_rank": 2,
+        "source_guid": "I640bcc72262e11ee9022c2caebceb122"
+      },
+      {
+        "content_type": "ANALYTICAL",
+        "global_rank": 3,
+        "source_guid": "I4be1fc423b8311eeae0089287a6abf5b"
+      }
+    ]
+  },
+  "westlaw_chat_profile4-snippets-mock": {
+    "admin_decision": [
+      {
+        "content_type": "ADMINDECISION",
+        "global_rank": 1,
+        "source_guid": "I4cf4acfc5ee111ee8921fbef1a541940",
+        "snippets": [
+          {
+            "termData": {
+              "provisional": "73,393,479,573",
+              "remedies": "85",
+              "remedy": "405,491"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;22} This court previously addressed the finality of orders concerning <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedies</span> in State v. Muncie (2001), 91 Ohio St.3d 440, 746 N.E.2d 1092, where we explained that &#8220;an order is a &#8216;final order&#8217; if it satisfies each part of a three-part test: &#8201;(1) the order must either grant or deny relief sought in a certain type of proceeding&#8212;a proceeding that the General Assembly calls a &#8216; <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>,&#8217; (2) the order must both determine the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevent a judgment in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span>...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_69768"
+          },
+          {
+            "termData": {
+              "provisional": "155,221,330",
+              "remedy": "167,233,342,425"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...&#8194; This argument is not well taken because it ignores R.C. 2505.02(B)(4), which specifies that an order is final and appealable when it grants or denies a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and &#8220;determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> &#8221; and &#8220;[t]he appealing party would not be afforded a meaningful or effective <span class=\"co_searchTerm\">remedy</span> by an appeal following final judgment.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_80001",
+            "documentOffset": 80001
+          },
+          {
+            "termData": {
+              "provisional": "69,207,316",
+              "remedy": "81,219,328"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...[4]{&#182;&#8201;28} Having determined that the finding of the trial court is a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>, the next step in the analysis is to consider whether &#8220;[t]he order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_81524",
+            "documentOffset": 81524
+          },
+          {
+            "termData": {
+              "provisional": "74,183",
+              "remedy": "86,195"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;15} &#8220;(a) The order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>....",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_64568",
+            "documentOffset": 64568
+          }
+        ]
+      },
+      {
+        "content_type": "ADMINDECISION",
+        "global_rank": 2,
+        "source_guid": "Ibb4768c8194911ee8921fbef1a541940",
+        "snippets": [
+          {
+            "termData": {
+              "provisional": "73,393,479,573",
+              "remedies": "85",
+              "remedy": "405,491"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;22} This court previously addressed the finality of orders concerning <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedies</span> in State v. Muncie (2001), 91 Ohio St.3d 440, 746 N.E.2d 1092, where we explained that &#8220;an order is a &#8216;final order&#8217; if it satisfies each part of a three-part test: &#8201;(1) the order must either grant or deny relief sought in a certain type of proceeding&#8212;a proceeding that the General Assembly calls a &#8216; <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>,&#8217; (2) the order must both determine the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevent a judgment in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span>...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_69768"
+          },
+          {
+            "termData": {
+              "provisional": "155,221,330",
+              "remedy": "167,233,342,425"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...&#8194; This argument is not well taken because it ignores R.C. 2505.02(B)(4), which specifies that an order is final and appealable when it grants or denies a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and &#8220;determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> &#8221; and &#8220;[t]he appealing party would not be afforded a meaningful or effective <span class=\"co_searchTerm\">remedy</span> by an appeal following final judgment.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_80001",
+            "documentOffset": 80001
+          },
+          {
+            "termData": {
+              "provisional": "69,207,316",
+              "remedy": "81,219,328"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...[4]{&#182;&#8201;28} Having determined that the finding of the trial court is a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>, the next step in the analysis is to consider whether &#8220;[t]he order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_81524",
+            "documentOffset": 81524
+          },
+          {
+            "termData": {
+              "provisional": "74,183",
+              "remedy": "86,195"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;15} &#8220;(a) The order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>....",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_64568",
+            "documentOffset": 64568
+          }
+        ]
+      },
+      {
+        "content_type": "ADMINDECISION",
+        "global_rank": 3,
+        "source_guid": "Ibb4768c6194911ee8921fbef1a541940",
+        "snippets": [
+          {
+            "termData": {
+              "provisional": "73,393,479,573",
+              "remedies": "85",
+              "remedy": "405,491"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;22} This court previously addressed the finality of orders concerning <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedies</span> in State v. Muncie (2001), 91 Ohio St.3d 440, 746 N.E.2d 1092, where we explained that &#8220;an order is a &#8216;final order&#8217; if it satisfies each part of a three-part test: &#8201;(1) the order must either grant or deny relief sought in a certain type of proceeding&#8212;a proceeding that the General Assembly calls a &#8216; <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>,&#8217; (2) the order must both determine the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevent a judgment in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span>...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_69768"
+          },
+          {
+            "termData": {
+              "provisional": "155,221,330",
+              "remedy": "167,233,342,425"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...&#8194; This argument is not well taken because it ignores R.C. 2505.02(B)(4), which specifies that an order is final and appealable when it grants or denies a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and &#8220;determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> &#8221; and &#8220;[t]he appealing party would not be afforded a meaningful or effective <span class=\"co_searchTerm\">remedy</span> by an appeal following final judgment.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_80001",
+            "documentOffset": 80001
+          },
+          {
+            "termData": {
+              "provisional": "69,207,316",
+              "remedy": "81,219,328"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...[4]{&#182;&#8201;28} Having determined that the finding of the trial court is a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>, the next step in the analysis is to consider whether &#8220;[t]he order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_81524",
+            "documentOffset": 81524
+          },
+          {
+            "termData": {
+              "provisional": "74,183",
+              "remedy": "86,195"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;15} &#8220;(a) The order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>....",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_64568",
+            "documentOffset": 64568
+          }
+        ]
+      }
+    ],
+    "practical_law": [
+      {
+        "content_type": "KNOWHOW",
+        "global_rank": 1,
+        "source_guid": "Idcde28f3028111e38578f7ccc38dcbee",
+        "snippets": [
+          {
+            "termData": {
+              "provisional": "73,393,479,573",
+              "remedies": "85",
+              "remedy": "405,491"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;22} This court previously addressed the finality of orders concerning <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedies</span> in State v. Muncie (2001), 91 Ohio St.3d 440, 746 N.E.2d 1092, where we explained that &#8220;an order is a &#8216;final order&#8217; if it satisfies each part of a three-part test: &#8201;(1) the order must either grant or deny relief sought in a certain type of proceeding&#8212;a proceeding that the General Assembly calls a &#8216; <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>,&#8217; (2) the order must both determine the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevent a judgment in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span>...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_69768"
+          },
+          {
+            "termData": {
+              "provisional": "155,221,330",
+              "remedy": "167,233,342,425"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...&#8194; This argument is not well taken because it ignores R.C. 2505.02(B)(4), which specifies that an order is final and appealable when it grants or denies a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and &#8220;determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> &#8221; and &#8220;[t]he appealing party would not be afforded a meaningful or effective <span class=\"co_searchTerm\">remedy</span> by an appeal following final judgment.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_80001",
+            "documentOffset": 80001
+          },
+          {
+            "termData": {
+              "provisional": "69,207,316",
+              "remedy": "81,219,328"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...[4]{&#182;&#8201;28} Having determined that the finding of the trial court is a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>, the next step in the analysis is to consider whether &#8220;[t]he order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_81524",
+            "documentOffset": 81524
+          },
+          {
+            "termData": {
+              "provisional": "74,183",
+              "remedy": "86,195"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;15} &#8220;(a) The order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>....",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_64568",
+            "documentOffset": 64568
+          }
+        ]
+      },
+      {
+        "content_type": "KNOWHOW",
+        "global_rank": 2,
+        "source_guid": "Ib9a9f3d41c9a11e38578f7ccc38dcbee",
+        "snippets": [
+          {
+            "termData": {
+              "provisional": "73,393,479,573",
+              "remedies": "85",
+              "remedy": "405,491"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;22} This court previously addressed the finality of orders concerning <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedies</span> in State v. Muncie (2001), 91 Ohio St.3d 440, 746 N.E.2d 1092, where we explained that &#8220;an order is a &#8216;final order&#8217; if it satisfies each part of a three-part test: &#8201;(1) the order must either grant or deny relief sought in a certain type of proceeding&#8212;a proceeding that the General Assembly calls a &#8216; <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>,&#8217; (2) the order must both determine the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevent a judgment in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span>...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_69768"
+          },
+          {
+            "termData": {
+              "provisional": "155,221,330",
+              "remedy": "167,233,342,425"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...&#8194; This argument is not well taken because it ignores R.C. 2505.02(B)(4), which specifies that an order is final and appealable when it grants or denies a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and &#8220;determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> &#8221; and &#8220;[t]he appealing party would not be afforded a meaningful or effective <span class=\"co_searchTerm\">remedy</span> by an appeal following final judgment.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_80001",
+            "documentOffset": 80001
+          },
+          {
+            "termData": {
+              "provisional": "69,207,316",
+              "remedy": "81,219,328"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...[4]{&#182;&#8201;28} Having determined that the finding of the trial court is a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>, the next step in the analysis is to consider whether &#8220;[t]he order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_81524",
+            "documentOffset": 81524
+          },
+          {
+            "termData": {
+              "provisional": "74,183",
+              "remedy": "86,195"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;15} &#8220;(a) The order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>....",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_64568",
+            "documentOffset": 64568
+          }
+        ]
+      },
+      {
+        "content_type": "KNOWHOW",
+        "global_rank": 3,
+        "source_guid": "If0d479d417ce11ebbea4f0dc9fb69570",
+        "snippets": [
+          {
+            "termData": {
+              "provisional": "73,393,479,573",
+              "remedies": "85",
+              "remedy": "405,491"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;22} This court previously addressed the finality of orders concerning <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedies</span> in State v. Muncie (2001), 91 Ohio St.3d 440, 746 N.E.2d 1092, where we explained that &#8220;an order is a &#8216;final order&#8217; if it satisfies each part of a three-part test: &#8201;(1) the order must either grant or deny relief sought in a certain type of proceeding&#8212;a proceeding that the General Assembly calls a &#8216; <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>,&#8217; (2) the order must both determine the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevent a judgment in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span>...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_69768"
+          },
+          {
+            "termData": {
+              "provisional": "155,221,330",
+              "remedy": "167,233,342,425"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...&#8194; This argument is not well taken because it ignores R.C. 2505.02(B)(4), which specifies that an order is final and appealable when it grants or denies a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and &#8220;determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> &#8221; and &#8220;[t]he appealing party would not be afforded a meaningful or effective <span class=\"co_searchTerm\">remedy</span> by an appeal following final judgment.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_80001",
+            "documentOffset": 80001
+          },
+          {
+            "termData": {
+              "provisional": "69,207,316",
+              "remedy": "81,219,328"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...[4]{&#182;&#8201;28} Having determined that the finding of the trial court is a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>, the next step in the analysis is to consider whether &#8220;[t]he order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_81524",
+            "documentOffset": 81524
+          },
+          {
+            "termData": {
+              "provisional": "74,183",
+              "remedy": "86,195"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;15} &#8220;(a) The order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>....",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_64568",
+            "documentOffset": 64568
+          }
+        ]
+      }
+    ],
+    "secondary_sources": [
+      {
+        "content_type": "ANALYTICAL",
+        "global_rank": 1,
+        "source_guid": "I2e962832728a11eeaa63a87056c6f1f9",
+        "snippets": [
+          {
+            "termData": {
+              "provisional": "73,393,479,573",
+              "remedies": "85",
+              "remedy": "405,491"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;22} This court previously addressed the finality of orders concerning <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedies</span> in State v. Muncie (2001), 91 Ohio St.3d 440, 746 N.E.2d 1092, where we explained that &#8220;an order is a &#8216;final order&#8217; if it satisfies each part of a three-part test: &#8201;(1) the order must either grant or deny relief sought in a certain type of proceeding&#8212;a proceeding that the General Assembly calls a &#8216; <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>,&#8217; (2) the order must both determine the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevent a judgment in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span>...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_69768"
+          },
+          {
+            "termData": {
+              "provisional": "155,221,330",
+              "remedy": "167,233,342,425"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...&#8194; This argument is not well taken because it ignores R.C. 2505.02(B)(4), which specifies that an order is final and appealable when it grants or denies a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and &#8220;determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> &#8221; and &#8220;[t]he appealing party would not be afforded a meaningful or effective <span class=\"co_searchTerm\">remedy</span> by an appeal following final judgment.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_80001",
+            "documentOffset": 80001
+          },
+          {
+            "termData": {
+              "provisional": "69,207,316",
+              "remedy": "81,219,328"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...[4]{&#182;&#8201;28} Having determined that the finding of the trial court is a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>, the next step in the analysis is to consider whether &#8220;[t]he order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_81524",
+            "documentOffset": 81524
+          },
+          {
+            "termData": {
+              "provisional": "74,183",
+              "remedy": "86,195"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;15} &#8220;(a) The order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>....",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_64568",
+            "documentOffset": 64568
+          }
+        ]
+      },
+      {
+        "content_type": "ANALYTICAL",
+        "global_rank": 2,
+        "source_guid": "I640bcc72262e11ee9022c2caebceb122",
+        "snippets": [
+          {
+            "termData": {
+              "provisional": "73,393,479,573",
+              "remedies": "85",
+              "remedy": "405,491"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;22} This court previously addressed the finality of orders concerning <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedies</span> in State v. Muncie (2001), 91 Ohio St.3d 440, 746 N.E.2d 1092, where we explained that &#8220;an order is a &#8216;final order&#8217; if it satisfies each part of a three-part test: &#8201;(1) the order must either grant or deny relief sought in a certain type of proceeding&#8212;a proceeding that the General Assembly calls a &#8216; <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>,&#8217; (2) the order must both determine the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevent a judgment in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span>...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_69768"
+          },
+          {
+            "termData": {
+              "provisional": "155,221,330",
+              "remedy": "167,233,342,425"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...&#8194; This argument is not well taken because it ignores R.C. 2505.02(B)(4), which specifies that an order is final and appealable when it grants or denies a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and &#8220;determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> &#8221; and &#8220;[t]he appealing party would not be afforded a meaningful or effective <span class=\"co_searchTerm\">remedy</span> by an appeal following final judgment.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_80001",
+            "documentOffset": 80001
+          },
+          {
+            "termData": {
+              "provisional": "69,207,316",
+              "remedy": "81,219,328"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...[4]{&#182;&#8201;28} Having determined that the finding of the trial court is a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>, the next step in the analysis is to consider whether &#8220;[t]he order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_81524",
+            "documentOffset": 81524
+          },
+          {
+            "termData": {
+              "provisional": "74,183",
+              "remedy": "86,195"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;15} &#8220;(a) The order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>....",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_64568",
+            "documentOffset": 64568
+          }
+        ]
+      },
+      {
+        "content_type": "ANALYTICAL",
+        "global_rank": 3,
+        "source_guid": "I4be1fc423b8311eeae0089287a6abf5b",
+        "snippets": [
+          {
+            "termData": {
+              "provisional": "73,393,479,573",
+              "remedies": "85",
+              "remedy": "405,491"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;22} This court previously addressed the finality of orders concerning <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedies</span> in State v. Muncie (2001), 91 Ohio St.3d 440, 746 N.E.2d 1092, where we explained that &#8220;an order is a &#8216;final order&#8217; if it satisfies each part of a three-part test: &#8201;(1) the order must either grant or deny relief sought in a certain type of proceeding&#8212;a proceeding that the General Assembly calls a &#8216; <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>,&#8217; (2) the order must both determine the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevent a judgment in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span>...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_69768"
+          },
+          {
+            "termData": {
+              "provisional": "155,221,330",
+              "remedy": "167,233,342,425"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...&#8194; This argument is not well taken because it ignores R.C. 2505.02(B)(4), which specifies that an order is final and appealable when it grants or denies a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and &#8220;determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> &#8221; and &#8220;[t]he appealing party would not be afforded a meaningful or effective <span class=\"co_searchTerm\">remedy</span> by an appeal following final judgment.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_80001",
+            "documentOffset": 80001
+          },
+          {
+            "termData": {
+              "provisional": "69,207,316",
+              "remedy": "81,219,328"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...[4]{&#182;&#8201;28} Having determined that the finding of the trial court is a <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>, the next step in the analysis is to consider whether &#8220;[t]he order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>.&#8221; &#8194;...",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_81524",
+            "documentOffset": 81524
+          },
+          {
+            "termData": {
+              "provisional": "74,183",
+              "remedy": "86,195"
+            },
+            "tnc": false,
+            "xhtmlFragment": "...{&#182;&#8201;15} &#8220;(a) The order in effect determines the action with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span> and prevents a judgment in the action in favor of the appealing party with respect to the <span class=\"co_searchTerm\">provisional</span> <span class=\"co_searchTerm\">remedy</span>....",
+            "snippetLink": "/Document/I62e5021978c811dca1e6fa81e64372bf/View/FullText.html?navigationPath=Search%2Fv1%2Fresults%2Fnavigation%2Fi0ad072150000018d61376cdac68da138%3Fppcid%3Di0ad072150000018d6136d353c68da0af%26Nav%3DCASE%26fragmentIdentifier%3DI62e5021978c811dca1e6fa81e64372bf%26parentRank%3D0%26startIndex%3D0%26transitionType%3DSearchItem&listSource=Search&list=CASE&rank=1&ppcid=i0ad072150000018d6136d353c68da0af&originationContext=Search%20Result&transitionType=SearchItem&isSnapSnippetLink=true#co_snip_64568",
+            "documentOffset": 64568
+          }
+        ]
+      }
+    ]
+  }
+}

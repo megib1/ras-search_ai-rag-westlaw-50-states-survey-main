@@ -1,0 +1,14 @@
+application:
+  name: ai-rag-westlaw-50-states-survey
+
+service:
+  prod:
+    IamRole: arn:aws:iam::935712178677:role/a207891-ai-rag-westlaw-50-states-survey-prod-use1-eks
+  int:
+    IamRole: arn:aws:iam::653661534649:role/a207891-ai-rag-westlaw-50-states-survey-int-use1-eks
+  ci:
+    IamRole: arn:aws:iam::653661534649:role/a207891-ai-rag-westlaw-50-states-survey-ci-use1-eks
+  qa:
+    IamRole: arn:aws:iam::653661534649:role/a207891-ai-rag-westlaw-50-states-survey-qa-use1-eks
+  containerPort: 8000
+  servicePort: 80

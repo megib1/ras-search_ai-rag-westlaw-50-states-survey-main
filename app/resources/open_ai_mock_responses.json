@@ -1,0 +1,18 @@
+{
+  "westlaw_50ss_chat_profile3-scale-mock": {
+    "mockAnswers": [
+      "This is WL 50 SS mock response 1.",
+      "This is WL 50 SS mock response 2."
+    ],
+    "mockOpenAI": true,
+    "intentLabel": "legal",
+    "initialSleepTimeRange": {
+      "min": 9,
+      "max": 64
+    },
+    "followUpSleepTimeRange": {
+      "min": 9,
+      "max": 29
+    }
+  }
+}

@@ -1,0 +1,27 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ .Chart.Name }}-virtual-service-{{ .Values.environment }}
+  labels:
+{{ include "mychart.common_labels" .  | indent 4 }}
+  annotations:
+    app.tr.com/deployment-specification: "https://github.com/tr/ras-search_ai-rag-westlaw-50-states-survey/blob/main/helm2/application/templates/virtualservice.yaml"
+{{ include "mychart.resource_annotations" . | indent 4 }}
+spec:
+  gateways:
+    - {{ .Chart.Name }}-infra-gateway-{{ .Values.environment }}
+  hosts:
+    - '*'
+  http:
+    - name: {{ .Chart.Name }}-route-{{ .Values.environment }}
+      timeout: 4000s
+      match:
+      - uri:
+          prefix: /
+      route:
+        - destination:
+            host: {{ .Chart.Name }}-infra-service-{{ .Values.environment }}  # The k8 service
+            port:
+              number: {{ .Values.virtualservice.port.number }}
+            subset: {{ .Values.destination.subset }}
+          weight: {{ .Values.virtualservice.weight }}

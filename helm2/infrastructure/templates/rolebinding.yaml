@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ .Values.application.name }}-bind-secret-reader-role-{{ .Values.environment }}
+  labels:
+  annotations:
+    app.tr.com/deployment-specification: "https://github.com/tr/ras-search_ai-rag-westlaw-50-states-survey/blob/main/helm2/infrastructure/templates/rolebinding.yaml"
+{{ include "mychart.resource_annotations" . | indent 4 }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: {{ .Values.application.name }}-secret-reader-role-{{ .Values.environment }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ .Values.application.name }}-svc-account-{{ .Values.environment }}

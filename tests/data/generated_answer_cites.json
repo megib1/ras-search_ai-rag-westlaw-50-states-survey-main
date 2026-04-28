@@ -1,0 +1,138 @@
+{
+  "answer": {
+    "answerIsSubstantive": true,
+    "answerText": "Yes, this test [1] should pass [2].",
+    "cites": [
+      {
+        "endOffset": 8,
+        "passageIds": [
+          "I257b75f0f18311ebbb39f6d769114351-opinion-4-5-13",
+          "I257b75f0f18311ebbb39f6d769114351-opinion-4-10-18"
+        ],
+        "sourceGuid": "I257b75f0f18311ebbb39f6d769114351",
+        "startOffset": 7
+      },
+      {
+        "endOffset": 13,
+        "passageIds": [
+          "NC807ED40152911E0B43684C0FBDD697B_17"
+        ],
+        "sourceGuid": "NC807ED40152911E0B43684C0FBDD697B",
+        "startOffset": 12
+      }
+    ],
+    "searchResults": [
+      {
+        "contentType": "CASE",
+        "court": "Court Name",
+        "decidedDate": "2021-07-30",
+        "docGuid": "I257b75f0f18311ebbb39f6d769114351",
+        "docRelevanceScore": 0.9996491537556774,
+        "docSummary": null,
+        "docTitle": "Doc title",
+        "globalRank": 1,
+        "inInput": true,
+        "inputOrder": 2,
+        "isCited": true,
+        "negativeTreatments": [],
+        "redFlag": false,
+        "royaltyId": "0",
+        "scoredPassages": [
+          {
+            "citations": [],
+            "globalPassageRank": 2,
+            "inInput": true,
+            "isCited": true,
+            "passageId": "I257b75f0f18311ebbb39f6d769114351-opinion-4-5-13",
+            "passageNumber": 5,
+            "passageRelevanceScore": 0.9996491537556774,
+            "passageRelevanceScoreRaw": 7.9548115730285645,
+            "passageType": "OPINION_PASSAGE",
+            "scoredText": "Scored Text.",
+            "xpaths": [
+              {
+                "index": null,
+                "isfooter": false,
+                "isheader": false,
+                "xpath": "/n-docbody[1]/decision[1]/content.block[1]/opinion.block[1]/opinion.block.body[1]/opinion.lead[1]/opinion.body[1]/section[5]/section.body[1]/para[6]/paratext[1]"
+              }
+            ]
+          },
+          {
+            "citations": [],
+            "globalPassageRank": 4,
+            "inInput": true,
+            "isCited": true,
+            "passageId": "I257b75f0f18311ebbb39f6d769114351-opinion-4-10-18",
+            "passageNumber": 6,
+            "passageRelevanceScore": 0.9993535721859684,
+            "passageRelevanceScoreRaw": 7.34340238571167,
+            "passageType": "OPINION_PASSAGE",
+            "scoredText": "Scored Text.",
+            "xpaths": [
+              {
+                "index": null,
+                "isfooter": false,
+                "isheader": false,
+                "xpath": "/n-docbody[1]/decision[1]/content.block[1]/opinion.block[1]/opinion.block.body[1]/opinion.lead[1]/opinion.body[1]/section[5]/section.body[1]/para[11]/paratext[1]"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "contentType": "STATUTE",
+        "court": null,
+        "decidedDate": null,
+        "docGuid": "NC807ED40152911E0B43684C0FBDD697B",
+        "docRelevanceScore": 0.0000655014181729832,
+        "docSummary": "Doc Summary",
+        "docTitle": "S 101. Definitions",
+        "globalRank": 5,
+        "inInput": true,
+        "inputOrder": 7,
+        "isCited": true,
+        "negativeTreatments": [],
+        "redFlag": false,
+        "royaltyId": "00000",
+        "scoredPassages": [
+          {
+            "citations": null,
+            "globalPassageRank": 402,
+            "inInput": true,
+            "isCited": true,
+            "passageId": "NC807ED40152911E0B43684C0FBDD697B_17",
+            "passageNumber": 21,
+            "passageRelevanceScore": 0.0000655014181729832,
+            "passageRelevanceScoreRaw": -9.633373260498047,
+            "passageType": "STATUTE_PASSAGE",
+            "scoredText": "Scored Text.",
+            "xpaths": [
+              {
+                "index": null,
+                "isfooter": false,
+                "isheader": false,
+                "xpath": "/n-docbody/section/body/para[18]/paratext"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "intendedUserQuery": {
+    "analysis": null,
+    "contentTypes": [
+      "CASE",
+      "STATUTE"
+    ],
+    "isValid": false,
+    "jurisdiction": [
+      "ALLCASES"
+    ],
+    "normalizedQuestion": "does this test pass",
+    "promptTemplates": null,
+    "question": "Does this test pass?",
+    "userInput": "Does this test pass?"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "answer": {
+    "answerText": "None of the provided paragraphs directly address the elements of a quiet title claim in Texas. However, some paragraphs discuss cases involving quiet title actions. For example, in [1] and [3], claimants brought actions to quiet title to land, but the elements of the claim were not discussed. In [11], a quiet title action is mentioned as \"an action relating to the title of property.\" \n\nIn Carrico v. Kondos [21], a quiet title action was brought by a second purchaser of property against the original owner, but the focus of the case was on the breach of the right of first refusal agreement, rather than the elements of the quiet title claim. Similarly, in Williams v. Wachovia Mortg. Corp. [22], Stephens v. LNV Corporation [23], Essex Crane Rental Corp. v. Carter [24], and Financial Freedom Sr. Funding Corp. v. Horrocks [25], the cases involved quiet title claims, but the elements were not specifically discussed.\n\nTo provide a thorough answer to the search query, additional information or case law discussing the specific elements of a quiet title claim in Texas would be needed.",
+    "cites": [],
+    "searchResults": [
+      {
+        "contentType": "CASE",
+        "docGuid": "I0a38daf0393c11e9bc469b767245e66a",
+        "docRelevanceScore": 0.25724701596917116,
+        "docTitle": "McDuff v. Brumley",
+        "globalRank": 1,
+        "inInput": true,
+        "isCited": false,
+        "scoredPassages": [
+          {
+            "passageNumber": 1,
+            "inInput": true,
+            "isCited": false,
+            "passageId": "I0a38daf0393c11e9bc469b767245e66a-synopsis-0-0-0",
+            "passageRelevanceScore": 0.25724701596917116,
+            "passageRelevanceScoreRaw": 2.2484185695648193,
+            "passageType": "SYNOPSIS",
+            "scoredText": "Background: Claimants brought action against record owners to quiet title to land, alleging they acquired land by deed or by adverse possession. Record owners asserted counterclaim for declaratory judgment that deed conveyed no title or interest to disputed property. Following jury trial, the 46th District Court, Wilbarger County, No. 27,103, Stuart Messer, J., entered judgment quieting title in claimants based on adverse possession. Record owners appealed.",
+            "xpaths": [
+              {
+                "index": null,
+                "isfooter": null,
+                "isheader": null,
+                "xpath": "/n-docbody[1]/decision[1]/content.block[1]/synopsis[1]/synopsis.body[1]/synopsis.section[1]/synopsis.background[1]/synopsis.background.body[1]/para[1]/paratext[1]"
+              }
+            ]
+          },
+          {
+            "passageNumber": 2,
+            "inInput": true,
+            "isCited": false,
+            "passageId": "I0a38daf0393c11e9bc469b767245e66a-synopsis-1-0-1",
+            "passageRelevanceScore": 0.005397396827491093,
+            "passageRelevanceScoreRaw": -1.61570143699646,
+            "passageType": "SYNOPSIS",
+            "scoredText": "Holdings: The Court of Appeals, Pirtle, J., held that: competing claims of supremacy of title were required to be adjudicated in trespass-to-try-title rather than quiet title action;",
+            "xpaths": [
+              {
+                "index": null,
+                "isfooter": null,
+                "isheader": null,
+                "xpath": "/n-docbody[1]/decision[1]/content.block[1]/synopsis[1]/synopsis.body[1]/synopsis.section[1]/synopsis.holding[1]/synopsis.holding.body[1]/para[1]/paratext[1]"
+              }
+            ]
+          }
+        ],
+        "negativeTreatments": []
+      },
+      {
+        "contentType": "CASE",
+        "docGuid": "Ic3621b9067cf11ebae408ff11f155a05",
+        "docRelevanceScore": 0.22334688100249173,
+        "docTitle": "Brumley v. McDuff",
+        "globalRank": 2,
+        "inInput": true,
+        "isCited": false,
+        "scoredPassages": [
+          {
+            "passageNumber": 3,
+            "inInput": true,
+            "isCited": false,
+            "passageId": "Ic3621b9067cf11ebae408ff11f155a05-synopsis-0-0-0",
+            "passageRelevanceScore": 0.22334688100249173,
+            "passageRelevanceScoreRaw": 2.1071078777313232,
+            "passageType": "SYNOPSIS",
+            "scoredText": "Background: Claimants brought action against neighbors to \"quiet title\" to disputed land. Neighbors counterclaimed for judgment quieting title in their favor. The 46th District Court, Wilbarger County, Stuart Messer, J., presiding by assignment, entered judgment on jury verdict awarding title to claimants based on adverse possession. Neighbors appealed. The Amarillo Court of Appeals, 603 S.W.3d 449, reversed and rendered. Claimants petitioned for review.",
+            "xpaths": [
+              {
+                "index": null,
+                "isfooter": null,
+                "isheader": null,
+                "xpath": "/n-docbody[1]/decision[1]/content.block[1]/synopsis[1]/synopsis.body[1]/synopsis.section[1]/synopsis.background[1]/synopsis.background.body[1]/para[1]/paratext[1]"
+              }
+            ]
+          }
+        ],
+        "negativeTreatments": []
+      }
+    ],
+    "answer_is_substantive": true
+  },
+  "question": "What are the elements of a quiet title claim in Texas?"
+}

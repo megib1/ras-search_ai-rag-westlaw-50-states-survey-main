@@ -1,0 +1,246 @@
+[tool.poetry]
+name = "ras-search-ai-rag-westlaw-50-states-survey"
+version = "0.1.0"
+description = "AI RAG Westlaw 50 states survey"
+authors = ["John Engelhart <john.engelhart@thomsonreuters.com>"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "~3.11"
+raslogger = "^0.4.0"
+python-dotenv = "1.0.0"
+moto="4.1.10"
+ras-shared-python-conversation-core="^2.2.2"
+ras-shared-python-common-utils="^2.2.2"
+ras-shared-python-configuration-utils="^2.2.2"
+ras-shared-python-events-client="^2.2.2"
+ras-shared-python-datadog-utils="^2.2.2"
+ras-shared-python-gcs-utils="^2.2.2"
+pandas = "^2.1"
+dataclasses-json = "^0.6.7"
+celery = "^5.3.1"
+labs-aalp-jurisdictional-survey-service = "3.2.0rc1"
+pydantic-core = "^2.33.0"
+pydantic = "^2.11.1"
+sniffio = "^1.3.1"
+distro = "1.9.0"
+httpcore = "^1.0.9"
+h11 = "^0.16.0"
+cffi = ">=1.17.0"
+apscheduler = "^3.10.4"
+anyio = "^4.6.0"
+jiter = "^0.10.0"
+ras-shared-python-testing = ">=2.1.23"
+
+[tool.poetry.group.constraints]
+optional = true
+
+[tool.poetry.group.constraints.dependencies]
+numpy = "<2.0"
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.24.4"
+pytest="8.2"
+pytest-env="1.0.0"
+pytest-cov = "^6.1.1"
+pytest-html = "^4.1.1"
+mock = "^5.1.0"
+mockito = "^1.4.0"
+torch = "2.6.0"
+pytest-celery = "^0.0.0"
+pytest-asyncio = ">=0.24.0"
+black = "23.3.0"
+
+[tool.black]
+line-length = 120
+target-version = ["py311"]
+skip-string-normalization = false
+skip-magic-trailing-comma = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+xfail_strict = true
+pythonpath = ["app"]
+addopts = [
+    "--cov=app",  # Enable coverage for the app package
+    "--disable-warnings",  # Disable warnings summary
+    "--durations-min=0.05",  # Minimal duration in seconds for inclusion in slowest list.
+    "--durations=10",  # Show 10 slowest setup/test durations (N=0 for all)
+    "--strict-config",
+    "--strict-markers",  # Not registered markers raise errors
+    "--tb=short",  # Traceback print mode (auto, long, short, line, native, no)
+    "-p no:warnings",  # Disable warnings summary
+]
+minversion = "8.0"
+required_plugins = [
+    "pytest-asyncio",
+    "pytest-cov",
+    "pytest-env",
+    "pytest-html",
+]
+# plugin: ddtrace
+no-ddtrace = true
+# plugin: asyncio
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+# plugin: env
+env = [
+    "ENVIRONMENT=test",
+    "RESOURCES_DIR=./app/config/resources",
+    "TZ=UTC",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["app/"]
+omit = [
+    "app/config/celery_config.py",
+    "app/main.py"
+]
+
+[tool.coverage.report]
+skip_empty = true
+sort = "Name"
+exclude_also = [
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+    # Don't complain if non-runnable code isn't run:
+    'if TYPE_CHECKING:',
+    "if __name__ == .__main__.:",
+    # Don't complain about abstract methods, they aren't run:
+    "@(abc\\.)?abstractmethod",
+]
+
+[tool.coverage.html]
+directory = "reports/coverage_html"
+
+[tool.coverage.xml]
+output = "reports/coverage.xml"
+
+[tool.ruff]
+fix = true
+line-length = 120
+target-version = "py311"
+output-format = "pylint"
+show-fixes = true
+
+[tool.ruff.format]
+skip-magic-trailing-comma = true
+
+[tool.ruff.lint]
+select = [
+    "A", # flake8-builtins
+    "ARG", # flake8-unused-arguments
+    "B", # flake8-bugbear
+    "C", # flake8-comprehensions
+    "C90", # mccabe
+    "COM", # flak8-commas
+#    "D", # pydocstyle
+    "DTZ", # flake8-datetimez
+    "E", # pycodestyle error
+    "ERA", # flake8-eradicate
+    "EXE", # flake8-executable
+    "FA", # flake8-future-annotations
+    "FBT", # flake8-boolean-trap
+#    "FIX", # flake8-fixme
+    "FURB", # refurb
+    "F", # pyflakes
+    "I", # isort
+    "ICN", # flake8-import-conventions
+    "ISC", # flake8-implicit-str-concat
+    "LOG", # flake8-logging
+    "S", # flake8-bandit
+    "SIM", # flake8-simplify
+    "PERF", # Perflint
+    "PLE", # pylint error
+    "PLC", # pylint convention
+    "PLR", # pylint refactoring
+    "PLW", # pylint warning
+    "PL", # pylint
+    "PYI", # flake8-pyi
+    "Q", # flake8-quotes
+#    "PTH", # flake8-use-pathlib
+    "PT", # flake8-pytest-stile
+    "PYI", # flake8-pyi
+    "RUF", # Ruff-specific rules
+    "T10", # flake8-debugger
+#    "TD", # flake8-todo
+    "W", # pycodestyle warning
+    "UP", # pyupgrade
+]
+ignore = [
+    "COM812", # Trailing comma missing
+    "UP007", # Use `X | Y` for type annotations
+    "UP045", # Use `X | None` for type annotations
+    "RUF001",  # String contains ambiguous unicode character
+]
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false
+known-first-party = ["app"]
+
+[tool.ruff.lint.mccabe]
+# Flag errors (`C901`) whenever the complexity level exceeds 10.
+max-complexity = 10
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.pyupgrade]
+keep-runtime-typing = true
+
+[tool.ruff.lint.pycodestyle]
+max-doc-length = 120
+
+[tool.ruff.lint.per-file-ignores]
+"*/*.py" = [
+    "FBT001", # Found boolean trap
+    "FBT002", # Found boolean trap
+    "ERA001", # Found commented-out code
+    "RUF012", # Found commented-out code
+]
+
+"*/run_local*.py" = [
+    "E501", # Line too long
+    "ERA001", # Found commented-out code
+    "F401", # {name} imported but unused
+    "F841", # Local variable is assigned to but never used
+    "S105", # Possible hardcoded password assigned to variable
+    "S106", # Possible hardcoded password assigned to argument
+    "W505", # Doc line too long
+]
+"*/run_*_locally.py" = [
+    "ERA001", # Found commented-out code
+    "F401", # {name} imported but unused
+    "S105", # Possible hardcoded password assigned to variable
+    "S106", # Possible hardcoded password assigned to argument
+    "W505", # Doc line too long
+]
+
+"tests/test_*.py" = [
+    "S101", # Use of `assert` detected
+]
+
+"tests/*/test_*.py" = [
+    "ARG002", # Unused method argument
+    "PLR0913", # Too many arguments in function definition
+    "PLR2004", # Magic value used in comparison
+    "PT009", # Use of `assert` detected
+    "S101", # Use of `assert` detected
+]
+
+[tool.poe.tasks]
+pytest = "pytest --cache-clear --junitxml=reports/pytest_junit.xml --html=reports/pytest.html --self-contained-html --cov=app --cov-report=html:reports/coverage_html --cov-report=xml:reports/coverage.xml"
+
+[[tool.poetry.source]]
+name = "tr"
+url = "https://tr1.jfrog.io/artifactory/api/pypi/pypi/simple"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

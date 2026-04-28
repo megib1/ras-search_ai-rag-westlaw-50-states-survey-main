@@ -1,0 +1,19 @@
+name: ai-rag-westlaw-50-states-survey-infra
+
+apiVersion: v2
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+# Versions are expected to follow Semantic Versioning (https://semver.org/)
+version: 0.1.1
+
+
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application. Versions are not expected to
+# follow Semantic Versioning. They should reflect the version the application is using.
+# The command `sed` is used to modify this value during bake stage.
+appVersion: HASH  # This value is filled in by the bake_helper.py script during the bake stage
+description: |
+  celery workers deployment into Plexus
+type: application

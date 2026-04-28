@@ -1,0 +1,55 @@
+deployment :
+  replicaCount:
+    dev: 1
+    ci: 1
+    int: 1
+    qa: 6
+    prod: 6
+  terminationDrainDuration: 600s
+  terminationGracePeriodSeconds: 600
+  image:
+    containerPort : 8000
+    pullPolicy: IfNotPresent
+    resources:
+      limits:
+        cpu: 1.5
+        memory: 8Gi
+      requests:
+        cpu: 1
+        memory: 5Gi
+    livenessProbe:
+      httpGet:
+        port: 8000
+      initialDelaySeconds: 40
+      timeoutSeconds: 10
+      periodSeconds: 30
+      failureThreshold: 5
+    startupProbe:
+      periodSeconds: 10
+      failureThreshold: 10
+    readinessProbe:
+      httpGet:
+        port: 8000
+      initialDelaySeconds: 40
+      periodSeconds: 20
+hpa:
+  max:
+    dev: 2
+    ci: 2
+    int: 2
+    qa: 6
+    prod: 6
+  cpu:
+    targetAverageUtilization: 50
+  memory:
+    targetAverageUtilization: 65
+poddb:
+  maxUnavailable: "20%"
+
+virtualservice:
+  port:
+    number: 80
+  weight: 100
+
+destination:
+  subset: app-deployment

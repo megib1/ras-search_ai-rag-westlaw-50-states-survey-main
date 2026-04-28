@@ -1,0 +1,159 @@
+{
+  "response": "Yes, this test [1] should pass [2].",
+  "inline_supporting_material": [
+    {
+      "start_offset": 7,
+      "end_offset": 8,
+      "source_guid": "I257b75f0f18311ebbb39f6d769114351",
+      "content_type": "CASE",
+      "inline_global_rank": 1,
+      "supporting_passages": [
+        {
+          "global_passage_rank": 2,
+          "in_input": true,
+          "is_cited": true,
+          "passage_id": "I257b75f0f18311ebbb39f6d769114351-opinion-4-5-13",
+          "passage_relevance_score": 0.9996491537556774,
+          "passage_relevance_score_raw": 7.9548115730285645,
+          "passage_type": "OPINION_PASSAGE",
+          "scored_text": "Scored Text.",
+          "xpaths": [
+            {
+              "index": null,
+              "isFooter": false,
+              "isHeader": false,
+              "xpath": "/n-docbody[1]/decision[1]/content.block[1]/opinion.block[1]/opinion.block.body[1]/opinion.lead[1]/opinion.body[1]/section[5]/section.body[1]/para[6]/paratext[1]"
+            }
+          ]
+        },
+        {
+          "global_passage_rank": 4,
+          "in_input": true,
+          "is_cited": true,
+          "passage_id": "I257b75f0f18311ebbb39f6d769114351-opinion-4-10-18",
+          "passage_relevance_score": 0.9993535721859684,
+          "passage_relevance_score_raw": 7.34340238571167,
+          "passage_type": "OPINION_PASSAGE",
+          "scored_text": "Scored Text.",
+          "xpaths": [
+            {
+              "index": null,
+              "isFooter": false,
+              "isHeader": false,
+              "xpath": "/n-docbody[1]/decision[1]/content.block[1]/opinion.block[1]/opinion.block.body[1]/opinion.lead[1]/opinion.body[1]/section[5]/section.body[1]/para[11]/paratext[1]"
+            }
+          ]
+        }
+      ],
+      "royalty_id": "0"
+    },
+    {
+      "start_offset": 12,
+      "end_offset": 13,
+      "source_guid": "NC807ED40152911E0B43684C0FBDD697B",
+      "content_type": "STATUTE",
+      "inline_global_rank": 5,
+      "supporting_passages": [
+        {
+          "global_passage_rank": 402,
+          "in_input": true,
+          "is_cited": true,
+          "passage_id": "NC807ED40152911E0B43684C0FBDD697B_17",
+          "passage_relevance_score": 0.0000655014181729832,
+          "passage_relevance_score_raw": -9.633373260498047,
+          "passage_type": "STATUTE_PASSAGE",
+          "scored_text": "Scored Text.",
+          "xpaths": [
+            {
+              "index": null,
+              "isFooter": false,
+              "isHeader": false,
+              "xpath": "/n-docbody/section/body/para[18]/paratext"
+            }
+          ]
+        }
+      ],
+      "royalty_id": "00000"
+    }
+  ],
+  "supporting_material": [
+    {
+      "content_type": "CASE",
+      "source_guid": "I257b75f0f18311ebbb39f6d769114351",
+      "doc_relevance_score": 0.9996491537556774,
+      "doc_title": "Doc title",
+      "global_rank": 1,
+      "in_input": true,
+      "is_cited": true,
+      "royalty_id": "0",
+      "supporting_passages": [
+        {
+          "global_passage_rank": 2,
+          "in_input": true,
+          "is_cited": true,
+          "passage_id": "I257b75f0f18311ebbb39f6d769114351-opinion-4-5-13",
+          "passage_relevance_score": 0.9996491537556774,
+          "passage_relevance_score_raw": 7.9548115730285645,
+          "passage_type": "OPINION_PASSAGE",
+          "scored_text": "Scored Text.",
+          "xpaths": [
+            {
+              "index": null,
+              "isFooter": false,
+              "isHeader": false,
+              "xpath": "/n-docbody[1]/decision[1]/content.block[1]/opinion.block[1]/opinion.block.body[1]/opinion.lead[1]/opinion.body[1]/section[5]/section.body[1]/para[6]/paratext[1]"
+            }
+          ]
+        },
+        {
+          "global_passage_rank": 4,
+          "in_input": true,
+          "is_cited": true,
+          "passage_id": "I257b75f0f18311ebbb39f6d769114351-opinion-4-10-18",
+          "passage_relevance_score": 0.9993535721859684,
+          "passage_relevance_score_raw": 7.34340238571167,
+          "passage_type": "OPINION_PASSAGE",
+          "scored_text": "Scored Text.",
+          "xpaths": [
+            {
+              "index": null,
+              "isFooter": false,
+              "isHeader": false,
+              "xpath": "/n-docbody[1]/decision[1]/content.block[1]/opinion.block[1]/opinion.block.body[1]/opinion.lead[1]/opinion.body[1]/section[5]/section.body[1]/para[11]/paratext[1]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "content_type": "STATUTE",
+      "source_guid": "NC807ED40152911E0B43684C0FBDD697B",
+      "doc_relevance_score": 0.0000655014181729832,
+      "doc_title": "S 101. Definitions",
+      "global_rank": 5,
+      "in_input": true,
+      "is_cited": true,
+      "royalty_id": "00000",
+      "supporting_passages": [
+        {
+          "global_passage_rank": 402,
+          "in_input": true,
+          "is_cited": true,
+          "passage_id": "NC807ED40152911E0B43684C0FBDD697B_17",
+          "passage_relevance_score": 0.0000655014181729832,
+          "passage_relevance_score_raw": -9.633373260498047,
+          "passage_type": "STATUTE_PASSAGE",
+          "scored_text": "Scored Text.",
+          "xpaths": [
+            {
+              "index": null,
+              "isFooter": false,
+              "isHeader": false,
+              "xpath": "/n-docbody/section/body/para[18]/paratext"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

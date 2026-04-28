@@ -1,0 +1,2 @@
+class MaliciousContentException(Exception):
+    pass

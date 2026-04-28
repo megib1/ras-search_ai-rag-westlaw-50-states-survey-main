@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-service-{{ .Values.environment }}
+  labels:
+{{ include "mychart.common_labels" .  | indent 4 }}
+  annotations:
+    app.tr.com/deployment-specification: "https://github.com/tr/ras-search_ai-rag-westlaw-50-states-survey/blob/main/helm2/infrastructure/templates/service.yaml"
+{{ include "mychart.resource_annotations" . | indent 4 }}
+spec:
+  ports:
+    - name: http
+      port: {{ .Values.service.servicePort }}
+      targetPort: {{ .Values.service.containerPort }}
+  selector:
+    app: {{ .Values.application.name }}
+    env: {{ .Values.environment }}

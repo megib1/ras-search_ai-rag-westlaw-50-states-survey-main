@@ -1,0 +1,31 @@
+# Remove leading # from optional values to allow their usage
+
+# Artifactory credentials for resolving dependencies
+ARTIFACTORY_USER=s.ras-shared
+ARTIFACTORY_TOKEN_SECRET_NAME=RAS_SHARED_UTILS_ARTIFACTORY_TOKEN
+
+# Release artifact variable settings
+ARTIFACT_SOURCE_DIR=dist
+ARTIFACT_EXCLUSION_FILE=.github/exclude.lst
+# RELEASES_TO_KEEP=20 [Optional-Default value can be over written to change the max number of GH Releases to keep]
+
+# Enabled branch protection rules - This will override the creation of repository status badges in your README
+# BRANCH_PROTECTION=true [Optional-Boolean to indicate using branch protection rules]
+
+# Github repository and application health metric customization
+CODE_COV_THRESHOLD=70
+LINES_OF_CODE_DIRECTORY=./
+
+# Required configs for "Artifactory Shared Binary Publish" pattern/workflow
+# ARTIFACTORY_REPONAME=[Optional-used with artifactory-shared-binary-publish workflow]
+# ARTIFACTORY_FOLDERNAME=[Optional-used with artifactory-shared-binary-publish workflow]
+
+# DataDog API Key variable settings
+# DD_API_KEY_SECRET_NAME=[Optional-Name of the secret as stored in Github Secrets. Required when opted-in for sending custom metrics to DataDog]
+
+# Service name to be included in Cumulus logs and metrics
+SERVICE_NAME=ai-rag-westlaw-50-states-survey
+
+# Config for using the terraform deployment workflow
+# TERRAFORM_SETUP_SCRIPT_PATH=.github/scripts/terraform-env-setup.py [Optional-Default value that can be edited to fit your build]
+# TERRAFORM_DIR=[Required-Directory path to terraform files]
