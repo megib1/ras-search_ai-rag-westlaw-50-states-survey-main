@@ -15,10 +15,10 @@ _entitlement_client = None
 _llm_profile_service = None
 settings = get_settings()
 
-def get_entitlement_client(gcs_url: str):
+def get_entitlement_client(gcs_url: str, region: str):
     global _entitlement_client
     if _entitlement_client is None:
-        _entitlement_client = EntitlementClient(gcs_entitlement_path=gcs_url)
+        _entitlement_client = EntitlementClient(gcs_entitlement_path=gcs_url, region=region)
 
     return _entitlement_client
 
@@ -31,7 +31,7 @@ def get_llm_profile_service():
                                                  gcs_url=settings.GCS_URL,
                                                  gcs_user_secret=settings.GCS_USER_SECRET,
                                                  llm_environment=llm_env,
-                                                 entitlement_client=get_entitlement_client(settings.GCS_URL))
+                                                 entitlement_client=get_entitlement_client(settings.GCS_URL, settings.REGION))
     return _llm_profile_service
 
 
@@ -63,7 +63,7 @@ def log_event_loop_id(task_name):
         logger.error(f"Error in log_event_loop_id {task_name}: {e}")
 
 def refresh_auth_token(ls_settings: LegislationSurveySettings, gcs_user_secret: str):
-    entitlement_client = get_entitlement_client(gcs_url=settings.GCS_URL)
+    entitlement_client = get_entitlement_client(gcs_url=settings.GCS_URL, region=settings.REGION)
     updated_auth_token = entitlement_client.get_auth_token(gcs_user_secret).replace("Bearer ", "")
     auth_token = updated_auth_token
     ls_settings.auth_token = auth_token
@@ -72,4 +72,4 @@ def refresh_auth_token(ls_settings: LegislationSurveySettings, gcs_user_secret: 
 answer_profile_service: AnswerProfileService = AnswerProfileService(gcs_url=settings.GCS_URL,
                                                                     gcs_user_secret=settings.GCS_USER_SECRET,
                                                                     ras_config_base_url=settings.RAS_CONFIG_BASE_URL,
-                                                                    entitlement_client = get_entitlement_client(gcs_url=settings.GCS_URL))
+                                                                    entitlement_client = get_entitlement_client(gcs_url=settings.GCS_URL, region=settings.REGION))

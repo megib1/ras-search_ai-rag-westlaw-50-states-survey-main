@@ -18,7 +18,7 @@ from services.common_services import answer_profile_service, get_entitlement_cli
 logger = LoggingFactory.get_logger(__name__)
 settings = get_settings()
 dynamo_db_v2 = ConversationDBV2(settings.DYNAMO_TABLE_NAME, settings.S3_BUCKET, settings.REGION)
-entitlement_client = get_entitlement_client(gcs_url=settings.GCS_URL)
+entitlement_client = get_entitlement_client(gcs_url=settings.GCS_URL, region=settings.REGION)
 
 
 class ValidationService(ValidationServiceBaseV4):

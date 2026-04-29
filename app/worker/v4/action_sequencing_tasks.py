@@ -20,7 +20,7 @@ from services.v4.action_sequencing_service import ActionSequenceService
 
 logger = LoggingFactory.get_logger(__name__)
 settings = get_settings()
-entitlement_client = get_entitlement_client(gcs_url=settings.GCS_URL)
+entitlement_client = get_entitlement_client(gcs_url=settings.GCS_URL, region=settings.REGION)
 action_sequencing_service = ActionSequenceService()
 dynamo_db_v2 = ConversationDBV2(settings.DYNAMO_TABLE_NAME, settings.S3_BUCKET, settings.REGION)
 action_sequence_util = ActionSequenceUtil(settings=settings,

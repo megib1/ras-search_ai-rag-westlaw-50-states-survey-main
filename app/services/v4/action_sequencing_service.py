@@ -17,7 +17,7 @@ from services.v4.validation_service import ValidationService
 
 logger = LoggingFactory.get_logger(__name__)
 settings = get_settings()
-entitlement_client = get_entitlement_client(gcs_url=settings.GCS_URL)
+entitlement_client = get_entitlement_client(gcs_url=settings.GCS_URL, region=settings.REGION)
 dynamo_db_v2 = ConversationDBV2(settings.DYNAMO_TABLE_NAME, settings.S3_BUCKET, settings.REGION)
 email_service = EmailService(ses_secret=settings.AWS_SES_SECRET)
 
